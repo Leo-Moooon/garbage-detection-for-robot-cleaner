@@ -35,7 +35,15 @@ em {
 } */
 
 table.two-grid {
-    border-style: none;
+    border-style: hidden;
+}
+
+table.two-grid > tr {
+    border-style: hidden;
+}
+
+table.two-grid > td {
+    border-style: hidden;
 }
 
 .grid-items:nth-child(2n+1) {
