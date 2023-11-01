@@ -34,7 +34,7 @@ em {
     grid-template-rows: auto auto;
 } */
 
-#table.two-grid {
+table.two-grid {
     border-style: none;
 }
 
