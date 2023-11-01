@@ -34,7 +34,10 @@ em {
     grid-template-rows: auto auto;
 } */
 
-table.two-grid {
+table {
+    border-collapse: collapse;
+}
+/* table.two-grid {
     border-style: hidden;
 }
 
@@ -44,7 +47,7 @@ table.two-grid > tr {
 
 table.two-grid > td {
     border-style: hidden;
-}
+} */
 
 .grid-items:nth-child(2n+1) {
     overflow: hidden;
