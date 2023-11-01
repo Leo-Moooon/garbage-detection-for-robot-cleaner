@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="
+UTF-8">
         <link rel="stylesheet" type="text/css" href="templates/readme.css" />
     </head>
     <body>
@@ -39,14 +40,10 @@
         <h4>1) 데이터 수집 배경</h4>
         <aside class="callout">
             🧹 <strong> <code><strong>참고자료</strong></code> Ecovacs Robotics사의 로봇청소기용 딥러닝 모델 개발 후 포스트</strong>
-            <table id="two-grid">
-              <tr>
-                <td><img src="src/01_Data_collection_and_annotation.png" alt></td>
-              </tr>
-              <tr>
-                <td><em>출처: https://blog.tensorflow.org/2020/01/ecovacs-robotics-ai-robotic-vacuum.html</em></td>
-              </tr>
-            </table>
+            <p>
+                <img src="src/01_Data_collection_and_annotation.png" alt>
+                <em>출처: https://blog.tensorflow.org/2020/01/ecovacs-robotics-ai-robotic-vacuum.html</em>
+            </p>
             <blockquote>
                 대량의 데이터 없이 딥러닝 모델을 구축하는 것은 설계도 없이 집을 짓는 것과 같습니다. <br>
                 <strong>독특한 지상 시점과 흔하지 않은 객체 카테고리</strong>로 인해 저희의 요구에 맞는 공개 데이터 세트를 찾을 수 없었습니다. <br><br>
@@ -60,16 +57,16 @@
         <hr>
         <h4>2) 데이터 수집 기준 수립</h4>
         <p><strong>1. 수집항목 설정</strong></p>
-        <table>
-          <tr>
-            <td><img src="src/02_samsung_check_code.png" style="height: 20rem;"></td>
-            <td><img src="src/03_zetbot_manual.png" style="height: 20rem;"></td>
-          </tr>
-          <tr>
-            <td><em>삼성전자 서비스센터의 로봇청소기 점검코드</em></td>
-            <td><em>삼성전자 BESPOKE 제트 봇 AI 공식 매뉴얼</em></td>
-          </tr>
-        </table>
+        <div id="grid-wrapper" class="collection_setting">
+            <div class="grid-items">
+                <img src="src/02_samsung_check_code.png" style="height: 20rem;">
+                <em>삼성전자 서비스센터의 로봇청소기 점검코드</em>
+            </div>
+            <div class="grid-items">
+              <img src="src/03_zetbot_manual.png" style="height: 20rem;">
+              <em>삼성전자 BESPOKE 제트 봇 AI 공식 매뉴얼</em>
+            </div>
+        </div>
         <p>제한된 시간 및 자원 내에서 목표를 달성하기 위해 객체(라벨)의 수를 한정해서 수집하기로 했습니다. 기존 고급형 로봇청소기의 점검코드나 사용설명서, 사용자 리뷰 등을 참고하여,</p>
         <ul>
           <li>흡입 불가능한 장애물</li>
@@ -106,45 +103,40 @@
         </p>
         <h4>3) 데이터 수집 결과</h4>
         <img src="src/04_data_collections_status.png" alt style="height: 25rem;">
-        <table id="two-grid">
-          <tr>
-            <td><img src="src/05_data_collections_status(minmax).png" alt style="height: 15rem;"></td>
-            <td>
-              <h5>데이터 수집량이 적은 경우</h5>
-              <ul>
-                <li>다양한 형태 및 가짓수가 존재하지 않는 물체(바늘 등)</li>
-                <li>주변에서 구하기 어려운 물체(미니 리모컨 등)</li>
-              </ul>
+        <div id="grid-wrapper">
+          <div>
+            <img src="src/05_data_collections_status(minmax).png" alt>
+          </div>
+          <div>
+            <h5>데이터 수집량이 적은 경우</h5>
+            <li>다양한 형태 및 가짓수가 존재하지 않는 물체(바늘 등)</li>
+            <li>주변에서 구하기 어려운 물체(미니 리모컨 등)</li>
+            <br><br>
             <h5>데이터 수집량이 많은 경우</h5>
-            <ul>
-              <li>일반화 성능을 확인하기 위해 집중적으로 다양성을 확보한 물체(손목시계)</li>
-              <li>주변에서 구하기 쉬운 물체(반지 등)</li>
-            </ul>
-            </td>
-          </tr>
-        </table>
+            <li>일반화 성능을 확인하기 위해 집중적으로 다양성을 확보한 물체(손목시계)</li>
+            <li>주변에서 구하기 쉬운 물체(반지 등)</li>
+          </div>
+        </div>
         <h4>4) 데이터 정제</h4>
         <p>수집한 데이터는 Roboflow를 이용해 수작업으로 annotation을 진행하였습니다.</p>
         <li>Roboflow를 이용해 annotation 진행
-          <table id="two-grid">
-            <tr>
-              <td><img src="src/06_roboflow_left1.png" alt style="height: 10rem;"></td>
-              <td><img src="src/07_roboflow_right1.png" alt style="height: 10rem;"></td>
-            </tr>
-          </table>
+          <div id="grid-wrapper" class="roboflow1">
+            <div><img src="src/06_roboflow_left1.png" alt style="height: 10rem;"></div>
+            <div><img src="src/07_roboflow_right1.png" alt style="height: 10rem;"></div>
+          </div>
         </li>
         <br>
         <li>데이터 제외 기준: 잔상이 심한 객체 및 잘린 객체
-          <table id="two-grid">
-            <tr>
-              <td><img src="src/08_roboflow_left2.png" alt style="height: 10rem;"></td>
-              <td><img src="src/09_roboflow_right2.png" alt style="height: 10rem;"></td>
-            </tr>
-            <tr>
-              <td><em>잔상이 심한 객체</em></td>
-              <td><em>잘린 객체</em></td>
-            </tr>
-          </table>
+          <div id="grid-wrapper" class="roboflow2">
+            <div>
+              <img src="src/08_roboflow_left2.png" alt style="height: 10rem;">
+              <em>잔상이 심한 객체</em>
+            </div>
+            <div>
+              <img src="src/09_roboflow_right2.png" alt style="height: 10rem;">
+              <em>잘린 객체</em>
+            </div>
+          </div>
         </li>
         <hr>
         <h3>데이터 증강(Augmentation)</h3>
@@ -176,55 +168,55 @@
         </table>
         <br><br>
         <li><strong>적용 모습</strong></li>
-        <table id="two-grid">
-          <tr>
-            <td><img src="src/10_shoelace_before.png" alt style="height: 12rem;"></td>
-            <td><img src="src/11_shoelace_after.png" alt style="height: 12rem;"></td>
-          </tr>
-          <tr>
-            <td><em>흰 신발끈 데이터 원본</em></td>
-            <td><em>좌측의 원본을 6가지 색상으로 증강</em></td>
-          </tr>
-        </table>
+        <div id="grid-wrapper">
+          <div>
+            <img src="src/10_shoelace_before.png" alt style="height: 12rem;">
+            <em>흰 신발끈 데이터 원본</em>
+          </div>
+          <div>
+            <img src="src/11_shoelace_after.png" alt style="height: 12rem;">
+            <em>좌측의 원본을 6가지 색상으로 증강</em>
+          </div>
+        </div>
         <br><br>
         <li><strong>적용 후 성능 개선(gif 이미지)</strong></li>
-        <table id="two-grid">
-          <tr>
-            <td><img src="src/12_shoelace_before(gif).gif" alt style="height: 12rem;"></td>
-            <td><img src="src/13_shoelace_after(gif).gif" alt style="height: 12rem;"></td>
-          </tr>
-          <tr>
-            <td><em>적용 전</em></td>
-            <td><em>적용 후</em></td>
-          </tr>
-        </table>
+        <div id="grid-wrapper">
+          <div>
+            <img src="src/12_shoelace_before(gif).gif" alt style="height: 12rem;">
+            <em>적용 전</em>
+          </div>
+          <div>
+            <img src="src/13_shoelace_after(gif).gif" alt style="height: 12rem;">
+            <em>적용 후</em>
+          </div>
+        </div>
         <p>동일한 모델에 흰 신발끈 데이터만 학습시켰을 때와 흰 신발끈 데이터에 BoundingBox Color Jittering을 적용하여 증강한 데이터로 학습시켰을 때를 비교하면, 하늘색 신발끈이 있는 동영상에서 'shoelace'를 탐지한 프레임 수가  61에서 194로 3배 이상 증가하여 인식 성능이 월등히 향상된 것을 보실 수 있습니다.</p>
         <br><br>
         <h4>2) Horizontal Mosaic</h4>
         <p><code>문제상황</code>기존의 Mosaic 기법은 4장, 9장의 이미지를 2X2, 3X3 그리드 형태의 이미지로 변환하는 효과적인 데이터 증강 기법으로 소개되었지만, 저희 프로젝트에서는 본 기법 사용 시 <strong>바닥이 아닌 위치에서 객체가 잡히는 문제가 발생했습니다.</strong></p>
-        <table id="two-grid">
-          <tr>
-            <td><img src="src/14_mosaic4_left.png" alt style="height: 10rem;"></td>
-            <td><img src="src/15_mosaic4_right.png" alt style="height: 10rem;"></td>
-          </tr>
-          <tr>
-            <td><em>mosaic4(2X2) 적용 모습</em></td>
-            <td><em>mosaic4 적용 후 inference 시 객체를 잘못 잡는 모습</em></td>
-          </tr>
-        </table>
+        <div id="grid-wrapper">
+          <div>
+            <img src="src/14_mosaic4_left.png" alt style="height: 10rem;">
+            <em>mosaic4(2X2) 적용 모습</em>
+          </div>
+          <div>
+            <img src="src/15_mosaic4_right.png" alt style="height: 10rem;">
+            <em>mosaic4 적용 후 inference 시 객체를 잘못 잡는 모습</em>
+          </div>
+        </div>
         <br><br>
         <p><code>솔루션</code>기존의 Mosaic을 가로로만 배치하도록 (1X3) 형태로 수정했습니다.</p>
         <li>로봇청소기가 탐지해야 할 객체는 바닥 위에 있는 객체에 한정되는 반면에 기존의 Mosaic 기법은 세로 방향으로도 이미지가 배치되어 현실과 맞지 않는 객체의 높이 정보를 학습한 것으로 판단하였고, 불필요한 높이정보를 제거하기 위해 기존의 Mosaic 기법을 수정하였습니다.</li>
-        <table id="two-grid">
-          <tr>
-            <td><img src="src/16_mosaic3_left.png" alt style="height: 10rem;"></td>
-            <td><img src="src/17_mosaic3_right.png" alt style="height: 10rem;"></td>
-          </tr>
-          <tr>
-            <td><em>Horizontal Mosaic(1X3) 적용 시 모습</em></td>
-            <td><em>Horizontal Mosaic 적용 후 inference 시 잘못된 객체를 잡지 않는 모습</em></td>
-          </tr>
-        </table>
+        <div id="grid-wrapper">
+          <div>
+            <img src="src/16_mosaic3_left.png" alt style="height: 10rem;">
+            <em>Horizontal Mosaic(1X3) 적용 시 모습</em>
+          </div>
+          <div>
+            <img src="src/17_mosaic3_right.png" alt style="height: 10rem;">
+            <em>Horizontal Mosaic 적용 후 inference 시 잘못된 객체를 잡지 않는 모습</em>
+          </div>
+        </div>
         <p>그 외 적용된 기타 augmentation 기법은 YOLOv8의 기본 설정값을 따랐습니다.</p>
         <br>
         <h3>모델 학습 및 하이퍼파라미터 튜닝</h3>
