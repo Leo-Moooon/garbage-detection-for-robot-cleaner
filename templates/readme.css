@@ -29,13 +29,13 @@ img + em {
 
 #grid-wrapper {
     display: grid;
-    grid-template-columns: 25rem 25rem;
+    grid-template-columns: 20rem 20rem;
     grid-template-rows: auto auto;
 }
 
-#grid-wrapper.collection_setting {
-    grid-template-columns: 22rem 25rem;
-}
+/* #grid-wrapper.collection_setting {
+    grid-template-columns: 20rem 20rem;
+} */
 
 .grid-items:nth-child(2n+1) {
     overflow: hidden;
