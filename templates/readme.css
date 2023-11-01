@@ -7,6 +7,10 @@ img {
     height:  auto;
 }
 
+em {
+    display: block;
+}
+
 img + em {
     display: block;
     text-align: center;
